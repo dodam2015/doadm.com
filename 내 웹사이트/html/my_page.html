@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>마이페이지</title>
+</head>
+<body>
+  <label for="id">아이디:</label>
+  <input type="text" id="id" name="id">
+  <button onclick="save()">저장</button>
+
+  <script>
+    function save() {
+      var id = document.getElementById("id").value;
+      localStorage.setItem("id", id);
+      alert("저장되었습니다.");
+    }
+
+    function load() {
+      var id = localStorage.getItem("id");
+      document.getElementById("id").value = id;
+    }
+
+    window.onload = function() {
+      load();
+    };
+  </script>
+</body>
+</html>
